@@ -24,7 +24,7 @@ namespace SolutionRenamer
 
 
 
-            var fileExtensions = ".cs,.cshtml,.js,.csproj,.sln,.xml,.config,.cst,.csp";
+            var fileExtensions = ".cs,.cshtml,.js,.csproj,.sln,.xml,.config,.cst,.csp,.ps1";
             string[] filter = fileExtensions.Split(',');
             Stopwatch sp = new Stopwatch();
 
