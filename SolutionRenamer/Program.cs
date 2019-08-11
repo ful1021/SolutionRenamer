@@ -20,7 +20,7 @@ namespace SolutionRenamer
             var oldCompanyName = oldSln.Split('.').FirstOrDefault();
             var oldPeojectName = oldSln.Split('.').LastOrDefault();
             var newCompanyName = newSln.Split('.').FirstOrDefault();
-            var newPeojectName = newSln.Split('.').FirstOrDefault();
+            var newPeojectName = newSln.Split('.').LastOrDefault();
 
 
 
