@@ -13,16 +13,12 @@ namespace SolutionRenamer
         {
             var oldSln = "AbpCompanyName.AbpProjectName";
             var newSln = "Boss.Hr";
-            var rootDir = @"E:\Work\jk724\OA-service\aspnet-core";
-
-
+            var rootDir = @"E:\Work\abp\test";
 
             var oldCompanyName = oldSln.Split('.').FirstOrDefault();
             var oldPeojectName = oldSln.Split('.').LastOrDefault();
             var newCompanyName = newSln.Split('.').FirstOrDefault();
             var newPeojectName = newSln.Split('.').LastOrDefault();
-
-
 
             var fileExtensions = ".cs,.cshtml,.js,.csproj,.sln,.xml,.config,.cst,.csp,.ps1";
             string[] filter = fileExtensions.Split(',');
@@ -102,7 +98,8 @@ namespace SolutionRenamer
             //重命名当前目录文件和文件内容
             foreach (var item in files)
             {
-                var text = File.ReadAllText(item.FullName, Encoding.UTF8);
+                var text = FileRead.ReadAllText(item.FullName);
+                //var text = File.ReadAllText(item.FullName, Encoding.UTF8);
                 if (!string.IsNullOrEmpty(oldCompanyName))
                 {
                     text = text.Replace(oldCompanyName, newCompanyName);
