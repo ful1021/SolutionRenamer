@@ -11,16 +11,16 @@ namespace SolutionRenamer
     {
         private static void Main(string[] args)
         {
-            var oldSln = "AbpCompanyName.AbpProjectName";
-            var newSln = "Boss.Hr";
-            var rootDir = @"E:\Work\abp\test";
+            var oldSln = "MyCompanyName.AbpZeroTemplate";
+            var newSln = "AbpCompanyName.AbpProjectName";
+            var rootDir = @"E:\Work\abp\aspnet-zero-core-7.0.0";
 
             var oldCompanyName = oldSln.Split('.').FirstOrDefault();
             var oldPeojectName = oldSln.Split('.').LastOrDefault();
             var newCompanyName = newSln.Split('.').FirstOrDefault();
             var newPeojectName = newSln.Split('.').LastOrDefault();
 
-            var fileExtensions = ".cs,.cshtml,.js,.csproj,.sln,.xml,.config,.cst,.csp,.ps1";
+            var fileExtensions = ".cs,.cshtml,.html,.js,.csproj,.sln,.xml,.config,.txt,.cst,.csp,.ps1";
             string[] filter = fileExtensions.Split(',');
             Stopwatch sp = new Stopwatch();
 
