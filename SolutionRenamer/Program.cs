@@ -13,7 +13,7 @@ namespace SolutionRenamer
         {
             var oldSln = "MyCompanyName.AbpZeroTemplate";
             var newSln = "AbpCompanyName.AbpProjectName";
-            var rootDir = @"E:\Work\abp\aspnet-zero-core-7.0.0";
+            var rootDir = @"E:\Work\abp\aspnet-zero-core-7.1.0";
 
             var oldCompanyName = oldSln.Split('.').FirstOrDefault();
             var oldPeojectName = oldSln.Split('.').LastOrDefault();
