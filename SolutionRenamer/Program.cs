@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -15,10 +14,9 @@ namespace SolutionRenamer
             //var newSln = "AbpCompanyName.AbpProjectName";
             //var rootDir = @"E:\Work\abp\aspnet-zero-core-7.1.0";
 
-
             var oldSln = "AbpCompanyName.AbpProjectName";
             var newSln = "Boss.Hr";
-            var rootDir = @"E:\Work\github\ful1021\Boss.Hr\Boss.Hr\aspnet-core\src";
+            var rootDir = @"E:\Work\abp\temp\aspnet-core\test";
 
             var oldCompanyName = oldSln.Split('.').FirstOrDefault();
             var oldPeojectName = oldSln.Split('.').LastOrDefault();
@@ -98,7 +96,7 @@ namespace SolutionRenamer
         private static void RenameAllFileNameAndContent(string rootDir, string oldCompanyName, string oldPeojectName, string newCompanyName, string newProjectName, string[] filter)
         {
             //获取当前目录所有指定文件扩展名的文件
-            List<FileInfo> files = new DirectoryInfo(rootDir).GetFiles().Where(m => filter.Any(f => f == m.Extension)).ToList();
+            var files = new DirectoryInfo(rootDir).GetFiles().Where(m => filter.Any(f => f == m.Extension) || m.Extension == "").ToList();
 
             //重命名当前目录文件和文件内容
             foreach (var item in files)
